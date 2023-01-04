@@ -1,6 +1,6 @@
 # Workflow to test Sauce Connect tunnel start with 
 
-name: Best Practices Tests
+name: API SC Test
 'on':
   #push:
     #branches:

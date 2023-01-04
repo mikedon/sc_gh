@@ -3,15 +3,18 @@
 name: Best Practices Tests
 'on':
   #push:
-    #branches:
-      #- main
+  #branches:
+  #- main
   workflow_dispatch: null
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Action Test
     steps:
-      - uses: saucelabs/sauce-connect-action@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - uses: ./
         with:
           username: '${{ secrets.SAUCE_USERNAME }}'

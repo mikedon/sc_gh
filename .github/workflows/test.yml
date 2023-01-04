@@ -9,15 +9,12 @@ name: Best Practices Tests
 jobs:
   test:
     runs-on: ubuntu-latest
+
     name: Action Test
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      uses: saucelabs/sauce-connect-action@v2
         with:
-          node-version: 16
-      - uses: ./
-        with:
-          username: '${{ secrets.SAUCE_USERNAME }}'
-          accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'
-          tunnelName: github-action-tunnel
-          configFile: '${{ github.workspace }}/sc-configuration/config.yaml'
+          username: ${{ secrets.SAUCE_USERNAME }}
+          accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+          region: eu-central
+          tunnelName: eyalyovel_tunnel_name

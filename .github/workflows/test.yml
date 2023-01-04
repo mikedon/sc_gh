@@ -1,0 +1,20 @@
+# Workflow to test Sauce Connect tunnel start with 
+
+name: Best Practices Tests
+'on':
+  #push:
+    #branches:
+      #- main
+  workflow_dispatch: null
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Action Test
+    steps:
+      - uses: saucelabs/sauce-connect-action@v2
+        with:
+          username: '${{ secrets.SAUCE_USERNAME }}'
+          accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'
+          tunnelName: github-action-tunnel
+          configFile: '${{ github.workspace }}/sc-configuration/config.yaml'

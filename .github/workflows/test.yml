@@ -1,12 +1,19 @@
 name: Best Practices Tests
-'on':
-  workflow_dispatch: null
+
+on:
+  workflow_dispatch:
+
 jobs:
-  test:
+  start_sc_api_tunnel:
     runs-on: ubuntu-latest
-    name: Action Test
     steps:
-      - uses: saucelabs/sauce-connect-action@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: api_branch
+
+      - name: Action Test
+        uses: saucelabs/sauce-connect-action@v2
         with:
           username: '${{ secrets.SAUCE_USERNAME }}'
           accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'

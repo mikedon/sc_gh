@@ -13,7 +13,7 @@ jobs:
           path: api_branch
 
       - name: Action Test
-        uses: saucelabs/sauce-connect-action@v2
+        uses: ./
         with:
           username: '${{ secrets.SAUCE_USERNAME }}'
           accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'

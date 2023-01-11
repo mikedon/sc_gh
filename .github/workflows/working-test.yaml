@@ -1,7 +1,9 @@
 
 name: Working Test
-'on':
+
+on:
   workflow_dispatch: null
+  
 jobs:
   test:
     runs-on: ubuntu-latest

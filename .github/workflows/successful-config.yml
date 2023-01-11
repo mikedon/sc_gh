@@ -1,0 +1,16 @@
+name: Successful Config
+
+on:
+  workflow_dispatch: null
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Start Tunnel
+    steps:
+      - uses: saucelabs/sauce-connect-action@v2
+        with:
+          username: '${{ secrets.SAUCE_USERNAME }}'
+          accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'
+          region: us-west
+          tunnelName: test_tunnel_name

@@ -1,4 +1,4 @@
-name: Default Config
+name: Repo Config
 
 on:
   workflow_dispatch: null
@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Start Tunnel
     steps:
-      - uses: saucelabs/sauce-connect-action@v2
+      - uses: actions/checkout@v3
+      - uses: ./
         with:
           username: '${{ secrets.SAUCE_USERNAME }}'
           accessKey: '${{ secrets.SAUCE_ACCESS_KEY }}'

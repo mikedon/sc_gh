@@ -1,5 +1,5 @@
 
-name: Best Practices Tests
+name: Working Test
 'on':
   workflow_dispatch: null
 jobs:

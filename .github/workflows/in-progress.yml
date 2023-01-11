@@ -6,7 +6,7 @@ on:
 jobs:
   start_sc_api_tunnel:
     runs-on: ubuntu-latest
-    name: Action Test
+    name: Start API Testing Tunnel
     steps:
       - uses: saucelabs/sauce-connect-action@v2
         with:

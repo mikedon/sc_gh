@@ -6,7 +6,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Action Test
+    name: Start Tunnel
     steps:
       - uses: saucelabs/sauce-connect-action@v2
         with:

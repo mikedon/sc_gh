@@ -1,4 +1,4 @@
-name: copy
+name: In Progress Config
 
 on:
   workflow_dispatch:

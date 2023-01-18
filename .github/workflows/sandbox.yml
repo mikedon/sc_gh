@@ -15,6 +15,7 @@ jobs:
           region: us-west
           tunnelName: test_tunnel_name
           configFile: ${{ github.workspace }}/sc-configuration/config.yaml
+          retryTimeout: 1
           
       - uses: actions/upload-artifact@v3
         if: ${{ failure() }}

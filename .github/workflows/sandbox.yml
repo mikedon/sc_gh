@@ -15,6 +15,12 @@ jobs:
           region: us-west
           tunnelName: test_tunnel_name
           configFile: ${{ github.workspace }}/sc-configuration/config.yaml
+          
+      - uses: actions/upload-artifact@v3
+        if: ${{ failure() }}
+        with:
+          name: sauce-connect-log
+          path: ${{ env.SAUCE_CONNECT_DIR_IN_HOST }}/sauce-connect.log
 
     # runs-on: ubuntu-latest
     # steps:
